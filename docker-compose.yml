@@ -1,0 +1,18 @@
+volumes:
+  local_mysql:
+
+services:
+  mysql:
+    container_name: phpunit_mysql
+    image: mysql:5.7
+    command: --innodb_use_native_aio=0 --explicit_defaults_for_timestamp
+    environment:
+      MYSQL_ROOT_PASSWORD: propertypro.1
+      MYSQL_DATABASE: testing-with-a-bite
+      MYSQL_USER: symfo
+      MYSQL_PASSWORD: symfo
+    ports:
+      - 3306:3306
+    volumes:
+      - local_mysql:/var/lib/mysql
+
