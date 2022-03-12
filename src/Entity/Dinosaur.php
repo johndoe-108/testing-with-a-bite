@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Dinosaur
 {
+    const LARGE = 10;
+    const HUGE = 30;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -81,7 +84,7 @@ class Dinosaur
         return $this;
     }
 
-    public function getIsCarnivorous(): ?bool
+    public function isCarnivorous(): ?bool
     {
         return $this->isCarnivorous;
     }
